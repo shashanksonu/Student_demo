@@ -1,0 +1,27 @@
+Enter new student information
+<hr>
+<%= form_for @student do |f| %>
+  <%= f.label :firstname %>:
+  <%= f.text_field :firstname %><br />
+
+  <%= f.label :lastname %>:
+  <%= f.text_field :lastname %><br />
+
+  <%= f.submit %>
+<% end %>
+<hr>
+Display all students information<br \>
+<table border="4">
+	<tr>
+	<th>firstname</th>
+  	<th>lastname</th>
+  	</tr>
+<% if !@students.blank? %>
+	<% for item in @students %>
+		<tr>
+		<td><%= item.firstname %></td><td><%= item.lastname %></td></tr><br\><br\>
+	<% end %>
+</table>	
+<% else %>
+	
+<% end %>
